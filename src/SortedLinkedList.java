@@ -6,10 +6,8 @@ public class SortedLinkedList implements SortedLinkListInterface{
 		this.head = null; 
 		this.size=0;
 	}
-
 	@Override
 	public void insert( int data) {
-//		SortedLinkedList list = this;
 		this.size++ ;
 		Node newNode = new Node(data);
 		if(this.head==null){
@@ -62,6 +60,10 @@ public class SortedLinkedList implements SortedLinkListInterface{
 			System.out.println(cur.data);
 			cur = cur.next;
 		}
+	}
+	@Override
+	public int getSize() {
+		return this.size;
 	}
 
 }

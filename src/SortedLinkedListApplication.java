@@ -9,7 +9,6 @@ public class SortedLinkedListApplication {
 		my.insert(1);
 		my.insert(4);
 		my.insert(2);
-	
 		
 		my.printLinkedList();
 		

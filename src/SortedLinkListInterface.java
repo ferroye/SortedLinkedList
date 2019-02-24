@@ -6,4 +6,5 @@ public interface SortedLinkListInterface {
 	void clearAll(SortedLinkedList list);
 	SortedLinkedList reverseLinkList(SortedLinkedList list);
 	void printLinkedList();
+	int getSize();
 }
