@@ -18,9 +18,7 @@ public class SortedLinkedList implements SortedLinkListInterface{
 		}else{
 			Node cur = this.head ; 
 			Node pre = null;
-			
 			while(cur!= null){
-				
 				if(newNode.data<cur.data){
 					pre.next = newNode;
 					newNode.next = cur; 
@@ -31,26 +29,49 @@ public class SortedLinkedList implements SortedLinkListInterface{
 			}
 			pre.next = newNode;
 		}
+	}
+
+	@Override
+	public void delete(int data) {
+		//delete one only 
+		if(this.size == 0 || this.size ==1){
+			this.head = null ; 
+		}
+		if(this.head.data == data){
+			this.head = this.head.next;
+			return; 
+		}
+		
+		Node cur = this.head;
+		Node pre = cur;
+		while(cur!= null){
+			if(cur.data == data){
+				pre.next = cur.next;
+				return; 
+			}
+			pre = cur ; 
+			cur = cur.next;
+			
+		}
 		
 		
 	}
 
 	@Override
-	public void delete(SortedLinkedList list, int data) {
-		
-		
+	public void clearAll() {
+		this.head = null;
 	}
 
 	@Override
-	public void clearAll(SortedLinkedList list) {
-		
-		
-	}
-
-	@Override
-	public SortedLinkedList reverseLinkList(SortedLinkedList list) {
-		
-		return null;
+	public Node reverseLinkList(Node head) {
+		Node newHead = null; 
+		while(head!=null){
+			Node next = head.next;
+			head.next = newHead ;
+			newHead = head;
+			head = next;
+		}
+		return newHead;
 	}
 
 	@Override
