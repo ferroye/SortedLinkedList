@@ -35,13 +35,14 @@ public class SortedLinkedList implements SortedLinkListInterface{
 	public void delete(int data) {
 		//delete one only 
 		if(this.size == 0 || this.size ==1){
+			this.size =0;
 			this.head = null ; 
 		}
+		size--;
 		if(this.head.data == data){
 			this.head = this.head.next;
 			return; 
 		}
-		
 		Node cur = this.head;
 		Node pre = cur;
 		while(cur!= null){
@@ -50,11 +51,8 @@ public class SortedLinkedList implements SortedLinkListInterface{
 				return; 
 			}
 			pre = cur ; 
-			cur = cur.next;
-			
+			cur = cur.next;	
 		}
-		
-		
 	}
 
 	@Override
